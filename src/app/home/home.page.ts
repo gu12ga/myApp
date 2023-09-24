@@ -23,10 +23,20 @@ export class HomePage {
 
   async showMessage(msg: string){
 
+    const previousToat = await this.toastController.getTop();
+
+    if (previousToat){
+      return ;
+    }
+
     const toast = await this.toastController.create(
       {
         message: msg,
-        duration: 3000
+        buttons:[
+          {
+            icon: 'close'
+          }
+        ]
 
       }
     );
