@@ -26,7 +26,7 @@ export class HomePage {
     const previousToat = await this.toastController.getTop();
 
     if (previousToat){
-      return ;
+      await this.toastController.dismiss();
     }
 
     const toast = await this.toastController.create(
