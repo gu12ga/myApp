@@ -2,19 +2,51 @@
   text-align: center;
 }
 
-.custom-input-peso {
-  height: 100;
-  width: 100;
-  background-color: aquamarine;
+.custom-ion-list {
+  width: 100%; 
+  height: 100%; 
 }
 
-.custom-item-altura{
-  height: 10;
-  width: 10;
+.custom-peso {
+  height: 10px !important;
+  width: 100% !important;
 }
 
-.custom-input-altura{
-  height: 10;
-  width: 10;
-  background-color: aquamarine;
+.custom-altura{
+  height: 10px !important;
+  width: 100% !important;
+}
+
+.custom-buttom{
+  bottom: 350px;
+}
+
+.custom-ion-card{
+  width: 200px !important;
+  bottom: -150px;
+  left: 365px;
+}
+
+.below-weight {
+  color: blue; 
+}
+
+.healthy-weight {
+  color: green; 
+}
+
+.overweight {
+  color: orange; 
+}
+
+.obesity-i {
+  color: red; 
+}
+
+.obesity-ii {
+  color: purple; 
+}
+
+.obesity-iii {
+  color: maroon; 
 }

@@ -7,18 +7,29 @@
 </ion-header>
 
 <ion-content>
-<ion-list>
+<ion-list class="custom-ion-list">
+  
   <ion-item>
-    <ion-input aria-label="Custom input" label="Number input" label="Peso" [(ngModel)] = "weigth" labelPlacement="floating" fill="solid" placeholder=""></ion-input>
+    <ion-input type="number" label="Peso" [(ngModel)] = "weigth" labelPlacement="floating"  class = "custom-peso" fill="solid" placeholder=""></ion-input>
   </ion-item>
+  
   <br>
-  <ion-item class = "custom-item-altura">
-    <ion-input label="Number input" label="Altura" [(ngModel)] = "heigth" placeholder="Custom input" class = "custom-input-altura" labelPlacement="floating"  placeholder=""></ion-input>
+
+  <ion-item>
+    <ion-input type="number" label="Altura" [(ngModel)] = "heigth" placeholder="Custom input" class = "custom-altura" labelPlacement="floating" fill="solid"  placeholder=""></ion-input>
   </ion-item>
-  <ion-fab slot="fixed" horizontal="end" vertical="top" style="bottom: -40px;">
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center" class="custom-buttom">
     <ion-fab-button (click)="onCalculate()">
       <ion-icon name="calculator-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-card class ="custom-ion-card">
+    <ion-card-content [ngClass]="imcClass">
+      {{ imc }}
+    </ion-card-content>
+  </ion-card>
+
 </ion-list>
 </ion-content>

@@ -11,13 +11,44 @@ export class HomePage {
 
   weigth!: number
   heigth!: number
+  imc!: number
+  imcClass!: string;
 
   constructor(private toastController: ToastController) {}
 
   onCalculate(){
 
-    const imc = this.weigth/(this.heigth*this.heigth);
-    this.showMessage(`IMC: ${imc.toFixed(2)}`)
+    this.imc = this.weigth/(this.heigth*this.heigth);
+
+    if(this.imc<18.5){
+      this.imcClass = "below-weight";
+      this.showMessage("Você está abaixo do peso")
+    }
+
+    else if(this.imc>=18.5 && this.imc<25){
+      this.imcClass = "healthy-weight";
+      this.showMessage("Você está com peso saudável")
+    }
+
+    else if(this.imc>=25 && this.imc<30){
+      this.imcClass = "overweight";
+      this.showMessage("Você está sobrepeso")
+    }
+
+    else if(this.imc>=30 && this.imc<35){
+      this.imcClass = "obesity-i";
+      this.showMessage("Você está Obesidade Grau I (leve)")
+    }
+
+    else if(this.imc>=35 && this.imc<40){
+      this.imcClass = "obesity-ii";
+      this.showMessage("Você está Obesidade Grau II (moderada)")
+    }
+
+    else if(this.imc>=40){
+      this.imcClass = "obesity-iii";
+      this.showMessage("Você está Obesidade Grau III (grave)")
+    }
 
   }
 
